@@ -2,7 +2,7 @@ export const $ = (selector, scope = document) => scope.querySelector(selector);
 
 export const $on = (target, type, callback, capture) => target.addEventListener(type, callback, !!capture);
 
-export const ce = tag => document.createElement(tag)
+export const ce = tag => document.createElement(tag);
 
 export const round = x => x.toFixed(3);
 
