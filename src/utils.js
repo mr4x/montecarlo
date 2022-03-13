@@ -4,6 +4,8 @@ export const $on = (target, type, callback, capture) => target.addEventListener(
 
 export const ce = tag => document.createElement(tag);
 
+export const unpack = (arr, prop) => arr.map(x => x[prop]);
+
 export const round = x => x.toFixed(3);
 
 export const rand = (min, max) => Math.random() * (max - min) + min;

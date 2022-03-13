@@ -24,14 +24,17 @@
                 font: 14px/1.5 '72', sans-serif;
             }
 
-            canvas {
-                border: 1px dashed;
-                vertical-align: middle;
-            }
-
             .controls {
                 margin-bottom: 8px;
             }
+
+            #plots {
+                display: flex;
+            }
+
+#surfaces, #volume {
+    border: 1px dashed
+}
 
             select {
                 font:inherit
@@ -57,10 +60,13 @@
                 <option value="2500">2,500 точек</option>
                 <option value="10000">10,000 точек</option>
                 <option value="50000">50,000 точек</option>
+                <option value="100000">100,000 точек</option>
             </select>
         </div>
-        <canvas id="surfaces" width="800" height="800"></canvas>
-        <canvas id="volume" width="800" height="800"></canvas>
+        <div id="plots">
+        <div id="surfaces"></div>
+        <div id="volume"></div>
+    </div>
         <div id="result"></div>
         <script src="bundle.js"></script>
     </body>
