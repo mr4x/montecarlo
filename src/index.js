@@ -2,11 +2,11 @@ import Zdog from 'zdog';
 
 import { Color } from './colors';
 import { V } from './data';
-import { generateMesh, subPoint, divPoint, zUp, generatePoints, computeVolume, $, $on, ce } from './utils';
+import { generateMesh, subPoint, divPoint, zUp, generatePoints, computeVolume, $, $on, ce, round } from './utils';
 
 const PLOT_SIZE = 800 / Math.sqrt(3);
 
-let total = 50000,
+let total = 100,
     variant = 0;
 
 function computeVariant() {
@@ -75,7 +75,9 @@ function computeVariant() {
 
     const volume = computeVolume(v.aabb);
 
-    $('#result').textContent = `Точек в фигуре: ${count} из ${total}, объём: ${(volume * count) / total} из ${volume}`;
+    $('#result').textContent = `Точек в фигуре: ${count} из ${total} (${round((100 * count) / total)}%), объём: ${
+        (volume * count) / total
+    } из ${volume}`;
 }
 computeVariant();
 
