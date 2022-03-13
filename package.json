@@ -1,0 +1,17 @@
+{
+    "name": "montecarlo",
+    "version": "2022.3.12",
+    "private": true,
+    "scripts": {
+        "fmt": "prettier --write .",
+        "dev": "esbuild src/index.js --bundle --watch --sourcemap --define:DEBUG=true --outfile=docs/bundle.js",
+        "build": "esbuild src/index.js --bundle --minify --define:DEBUG=false --outfile=docs/bundle.js"
+    },
+    "devDependencies": {
+        "esbuild": "^0.14.25",
+        "prettier": "^2.5.1"
+    },
+    "dependencies": {
+        "zdog": "^1.1.3"
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width,initial-scale=1" name="viewport" />
+        <title>Метод Монте-Карло</title>
+        <link rel="preload" href="fonts/72-Regular.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="icon" type="image/png" href="icon-32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="icon-16.png" sizes="16x16" />
+        <style>
+            @font-face {
+                font-family: '72';
+                font-style: normal;
+                font-weight: 400;
+                src: url('fonts/72-Regular.woff2') format('woff2'), url('fonts/72-Regular.woff') format('woff');
+                font-display: swap;
+            }
+
+            *, *::before,*::after {
+                box-sizing: border-box;
+            }
+
+            body {
+                font: 14px/1.5 '72', sans-serif;
+            }
+
+            canvas {
+                border: 1px dashed;
+                vertical-align: middle;
+            }
+
+            .controls {
+                margin-bottom: 8px;
+            }
+
+            select {
+                font:inherit
+            }
+        </style>
+    </head>
+    <body>
+        <div class="controls">
+            <select id="variant">
+                <option value="0">Вариант 1</option>
+                <option value="1">Вариант 2</option>
+                <option value="2">Вариант 3</option>
+                <option value="3">Вариант 4</option>
+                <option value="4">Вариант 5</option>
+                <option value="5">Вариант 6</option>
+                <option value="6">Вариант 7</option>
+                <option value="7">Вариант 8</option>
+                <option value="8">Вариант 9</option>
+            </select>
+            <select id="points">
+                <option value="100">100 точек</option>
+                <option value="500">500 точек</option>
+                <option value="2500">2,500 точек</option>
+                <option value="10000">10,000 точек</option>
+                <option value="50000">50,000 точек</option>
+                <option value="100000" selected>100,000 точек</option>
+            </select>
+        </div>
+        <canvas id="surfaces" width="800" height="800"></canvas>
+        <canvas id="volume" width="800" height="800"></canvas>
+        <div id="result"></div>
+        <script src="bundle.js"></script>
+    </body>
+</html>
