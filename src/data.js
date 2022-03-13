@@ -66,14 +66,14 @@ export const V = [
             (x, y, z) => ({ x: 20 * sqrt(2 * y), y, z }),
             (x, y, z) => ({ x: 5 * sqrt(2 * y), y, z }),
             (x, y, z) => ({ x, y, z: 0 }),
-            (x, y, z) => ({ x, y, z: 1 / 2 - y }),
+            (x, y, z) => ({ x, y, z: 0.5 - y }),
         ],
         aabb: [
             { x: 0, y: 0, z: 0 },
-            { x: 20, y: 1 / 2, z: 1 / 2 },
+            { x: 20, y: 0.5, z: 0.5 },
         ],
         isInside: ({ x, y, z }) => {
-            return y >= 0 && y <= 2 && x >= 5 * sqrt(2 * y) && x <= 20 * sqrt(2 * y) && z >= 0 && z <= 1 / 2 - y;
+            return y >= 0 && y <= 2 && x >= 5 * sqrt(2 * y) && x <= 20 * sqrt(2 * y) && z >= 0 && z <= 0.5 - y;
         },
     },
     {
@@ -124,10 +124,10 @@ export const V = [
         ],
         aabb: [
             { x: 0, y: 0, z: 0 },
-            { x: 1, y: 1, z: 12 / 5 },
+            { x: 2, y: 2, z: 24 / 5 },
         ],
         isInside: ({ x, y, z }) => {
-            return y >= 0 && y <= 1 && x <= 2 - y && x <= sqrt(y) && z >= 0 && z <= (12 * y) / 5;
+            return y >= 0 && y <= 2 && x <= 2 - y && x <= sqrt(y) && z >= 0 && z <= (12 * x) / 5;
         },
     },
     {
@@ -135,14 +135,14 @@ export const V = [
             (x, y, z) => ({ x, y: 17 * sqrt(2 * x), z }),
             (x, y, z) => ({ x, y: 2 * sqrt(2 * x), z }),
             (x, y, z) => ({ x, y, z: 0 }),
-            (x, y, z) => ({ x: 1 / 2 - z, y, z }),
+            (x, y, z) => ({ x: 0.5 - z, y, z }),
         ],
         aabb: [
             { x: 0, y: 0, z: 0 },
-            { x: 1 / 2, y: 17, z: 1 / 2 },
+            { x: 0.5, y: 17, z: 0.5 },
         ],
         isInside: ({ x, y, z }) => {
-            return x >= 0 && x <= 1 / 2 && z >= 0 && z <= 1 / 2 - x && y >= 2 * sqrt(2 * x) && y <= 17 * sqrt(2 * x);
+            return x >= 0 && x <= 0.5 && z >= 0 && z <= 0.5 - x && y >= 2 * sqrt(2 * x) && y <= 17 * sqrt(2 * x);
         },
     },
 ];

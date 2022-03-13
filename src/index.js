@@ -1,9 +1,8 @@
-import Plotly from 'plotly.js-dist';
+import Plotly from 'plotly.js-gl3d-dist';
 
 import { Color } from './colors';
 import { V } from './data';
 import { generateMesh, generatePoints, computeVolume, $, $on, round, unpack } from './utils';
-
 
 let total = 100,
     variant = 0;
@@ -29,9 +28,9 @@ function computeVariant() {
             type: 'scatter3d',
             mode: 'markers',
             marker: {
-                size:2,
-                color: colors[i]
-            }
+                size: 2,
+                color: colors[i],
+            },
         });
     }
 
@@ -50,14 +49,14 @@ function computeVariant() {
             mode: 'markers',
             marker: {
                 size: 2,
-                color: Color.PURPLE()
-            }
+                color: Color.PURPLE(),
+            },
         },
     ];
 
-    const layout = {showlegend: false,width:800,height:800};
+    const layout = { showlegend: false, width: 800, height: 800 };
 
-   Plotly.newPlot('surfaces', data1, layout);
+    Plotly.newPlot('surfaces', data1, layout);
     Plotly.newPlot('volume', data2, layout);
 
     const volume = computeVolume(v.aabb);

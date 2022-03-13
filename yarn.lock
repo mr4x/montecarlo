@@ -133,6 +133,11 @@ plotly.js-dist@^2.11.0:
   resolved "https://registry.yarnpkg.com/plotly.js-dist/-/plotly.js-dist-2.11.0.tgz#3ec1ac892ddd3d4397012aa8e673229e1fff9c5d"
   integrity sha512-sU6MrsHmErDsQjvkhLYDJNNyJelmSiOSHykmokg5/8DUiLwhyEV0A2Ih2okYnSgmyA6Ky+sWod8kF3casisNpA==
 
+plotly.js-gl3d-dist@^2.11.0:
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/plotly.js-gl3d-dist/-/plotly.js-gl3d-dist-2.11.0.tgz#59aa94a36b9f45d5cbc8376b9a2a52823560d3f9"
+  integrity sha512-eGx5Iv207+EWTvd+Ss4mCYbCnJpaJZFOUGVLoQ1AphIRLv2tScCBk++adKhzNnOV2ANHLf6SredXSR2rVcFb2g==
+
 prettier@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.1.tgz#fff75fa9d519c54cf0fce328c1017d94546bc56a"
