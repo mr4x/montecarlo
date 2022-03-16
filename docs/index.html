@@ -16,7 +16,9 @@
                 font-display: swap;
             }
 
-            *, *::before,*::after {
+            *,
+            *::before,
+            *::after {
                 box-sizing: border-box;
             }
 
@@ -32,12 +34,13 @@
                 display: flex;
             }
 
-#surfaces, #volume {
-    border: 1px dashed
-}
+            #surfaces,
+            #volume {
+                border: 1px dashed;
+            }
 
             select {
-                font:inherit
+                font: inherit;
             }
         </style>
     </head>
@@ -63,10 +66,13 @@
                 <option value="100000">100,000 точек</option>
             </select>
         </div>
+        <div class="integral">
+            <img src="v1.jpg" alt="Интеграл" />
+        </div>
         <div id="plots">
-        <div id="surfaces"></div>
-        <div id="volume"></div>
-    </div>
+            <div id="surfaces"></div>
+            <div id="volume"></div>
+        </div>
         <div id="result"></div>
         <script src="bundle.js"></script>
     </body>

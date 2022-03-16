@@ -15,6 +15,7 @@ export const V = [
         isInside: ({ x, y, z }) => {
             return x >= 0 && x <= 2 && z >= 0 && z <= 2 - x && y >= sqrt(2 * x) && y <= 16 * sqrt(2 * x);
         },
+        integral: 32,
     },
     {
         fns: [
@@ -30,6 +31,7 @@ export const V = [
         isInside: ({ x, y, z }) => {
             return z >= 0 && z <= 5 + (5 * sqrt(x)) / 3 && y >= (5 * x) / 3 && y <= 5 * sqrt(x) && x >= 0 && x <= 9;
         },
+        integral: 180,
     },
     {
         fns: [
@@ -45,6 +47,7 @@ export const V = [
         isInside: ({ x, y, z }) => {
             return y >= 0 && y <= 2 && x >= 4 * sqrt(2 * y) && x <= 19 * sqrt(2 * y) && z >= 0 && z <= 2 - y;
         },
+        integral: 32,
     },
     {
         fns: [
@@ -58,8 +61,9 @@ export const V = [
             { x: 2, y: 2, z: 24 },
         ],
         isInside: ({ x, y, z }) => {
-            return x >= 0 && x <= 2 && y <= 2 - x && y <= sqrt(x) && z >= 0 && z <= 12 * y;
+            return x >= 0 && x <= 2 && y <= 2 - x && y >= sqrt(x) && z >= 0 && z <= 12 * y;
         },
+        integral: 4,
     },
     {
         fns: [
@@ -73,8 +77,9 @@ export const V = [
             { x: 20, y: 0.5, z: 0.5 },
         ],
         isInside: ({ x, y, z }) => {
-            return y >= 0 && y <= 2 && x >= 5 * sqrt(2 * y) && x <= 20 * sqrt(2 * y) && z >= 0 && z <= 0.5 - y;
+            return y >= 0 && y <= 0.5 && x >= 5 * sqrt(2 * y) && x <= 20 * sqrt(2 * y) && z >= 0 && z <= 0.5 - y;
         },
+        integral: 1,
     },
     {
         fns: [
@@ -92,6 +97,7 @@ export const V = [
                 y >= 0 && y <= 9 && x <= (5 * sqrt(y)) / 2 && x >= (5 * y) / 6 && z >= 0 && z <= (5 * (3 + sqrt(y))) / 6
             );
         },
+        integral: 45,
     },
     {
         fns: [
@@ -114,6 +120,7 @@ export const V = [
                 z <= (5 * (3 + sqrt(y))) / 18
             );
         },
+        integral: 5,
     },
     {
         fns: [
@@ -124,11 +131,12 @@ export const V = [
         ],
         aabb: [
             { x: 0, y: 0, z: 0 },
-            { x: 2, y: 2, z: 24 / 5 },
+            { x: 1, y: 2, z: 12 / 5 },
         ],
         isInside: ({ x, y, z }) => {
-            return y >= 0 && y <= 2 && x <= 2 - y && x <= sqrt(y) && z >= 0 && z <= (12 * x) / 5;
+            return y >= 0 && y <= 2 && x <= 2 - y && x >= sqrt(y) && z >= 0 && z <= (12 * x) / 5;
         },
+        integral: 0,
     },
     {
         fns: [
@@ -144,5 +152,6 @@ export const V = [
         isInside: ({ x, y, z }) => {
             return x >= 0 && x <= 0.5 && z >= 0 && z <= 0.5 - x && y >= 2 * sqrt(2 * x) && y <= 17 * sqrt(2 * x);
         },
+        integral: 1,
     },
 ];

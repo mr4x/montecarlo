@@ -60,16 +60,21 @@ function computeVariant() {
     Plotly.newPlot('volume', data2, layout);
 
     const volume = computeVolume(v.aabb);
+    const computedVolume = (volume * count) / total;
+    const absDiff = Math.abs(v.integral - computedVolume);
 
-    $('#result').textContent = `Точек в фигуре: ${count} из ${total} (${round((100 * count) / total)}%), объём: ${
-        (volume * count) / total
-    } из ${volume}`;
+    $('#result').textContent = `Точек в фигуре: ${count} из ${total} (${round(
+        (100 * count) / total
+    )}%), объём: ${computedVolume} из ${volume}. Точное значение: ${
+        v.integral
+    } абсолютная погрешность: ${absDiff} относительная: ${(100 * absDiff) / computedVolume}%`;
 }
 computeVariant();
 
 $on($('#variant'), 'change', ev => {
     const $el = ev.target;
     variant = +$el.options[$el.selectedIndex].value;
+    $('.integral img').src = `v${variant + 1}.jpg`;
     computeVariant();
 });
 
