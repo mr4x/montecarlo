@@ -136,7 +136,7 @@ export const V = [
         isInside: ({ x, y, z }) => {
             return y >= 0 && y <= 2 && x <= 2 - y && x >= sqrt(y) && z >= 0 && z <= (12 * x) / 5;
         },
-        integral: 0,
+        integral: 0.6,
     },
     {
         fns: [
